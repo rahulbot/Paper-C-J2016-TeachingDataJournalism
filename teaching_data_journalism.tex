@@ -1,0 +1,168 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 3.1
+% WORKS WITH V3.2SP OF ACM_PROC_ARTICLE-SP.CLS
+% APRIL 2009
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.2SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.2SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@hq.acm.org
+%
+% For tracking purposes - this is V3.1SP - APRIL 2009
+
+\documentclass{acm_proc_article-sp}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Teaching Data Journalism in a World of Tool and Tech Overload}
+
+\numberofauthors{2} 
+\author{
+\alignauthor
+Catherine D'Ignazio\\
+       \affaddr{ Engagement Lab}\\
+       \affaddr{Emerson College Journalism Department}\\
+       \affaddr{160 Boylston St. (4th floor)}\\
+       \affaddr{Boston, MA 02116, USA}\\
+       \email{catherine\textunderscore dignazio@emerson.edu}
+\alignauthor
+Rahul Bhargava\\
+       \affaddr{MIT Center for Civic Media}\\
+       \affaddr{20 Ames St.}\\
+       \affaddr{Cambridge, MA 02142, USA}\\
+       \email{rahulb@mit.edu}
+}
+
+\date{22 July 2016}
+
+\toappear{To appear in the Journalism \& Computation Conference, September 2016, Stanford, CA, USA.}
+
+% CATHERINE ADDED THIS TO RECLAIM SPACE ON THE FIRST PAGE!
+\makeatletter
+\def\@copyrightspace{\relax}
+\makeatother
+
+\maketitle
+\begin{abstract}
+Against a backdrop of systemic disruption in the field of journalism writ large, data journalism represents a subarea that is undergoing rapid transformation due to the introduction of new tools and techniques. As journalists and newsrooms adapt by experimenting and innovating, they are also creating new reporting practices. This paper explores the challenges for data journalism educators to teach in such a rapidly shifting landscape. Drawing from our experiences teaching journalism students in higher education, we assert that the goal of data journalism education amidst this complexity is not to teach specific technologies, nor even to teach technical skills, but rather to model for students strategies of dealing with transformation and complexity. These include peer learning, learning by doing, continuous learning and information seeking, and establishing a culture of critique. These methods draw from project- and peer-based learning literature to support educators to make the shift from the "banking model" of education to a learner-centered model in which students co-create knowledge with the professor. We offer concrete examples and propose these types of approaches to prepare students better for a career in a field in transformation. 
+
+\end{abstract}
+
+\section{Introduction}
+
+In the introduction to a recent issue of Journalism \& Mass Communication Educator, Maria B. Marron states, "Look anywhere at media, and there is nothing but disruption." \cite{marron_nothing_2016} She is speaking broadly about shifts in business models, user participation and technology. Donica Mensing and David Ryfe similarly make a case for a tri-fold crisis in journalism that consists of "economic disruption, technological disruption and decline in cultural authority" \cite{anderson_sociology_2014, mensing_blueprint_2013}. These authors are preoccupied not just with changes to the profession and practice of journalism but their implications for teaching journalism in the context of higher education against a backdrop of systemic disruption. The field of data journalism is a particularly accelerated subarea in this regard. How does one teach an emerging field whose foundation is undergoing profound change, whose tools and methods shift radically from year to year, and whose mastery involves drawing from quantitative, visual and narrative domains?  
+
+In this paper we draw on our experiences teaching non-technical learners about data and computational methods\footnote{D'Ignazio teaches data visualization to undergraduate and graduate journalism students at Emerson College. Bhargava teaches data storytelling to undergraduate and graduate media students at MIT and runs the community-centered data consultancy Data Therapy. We both run workshops for professionals in journalism, communications and the non-profit sector.}. The recent report "Teaching Data \& Computational Journalism" \cite{mensing_blueprint_2013} by Charles Berret and Cheryl Phillips identified one of the key institutional challenges to educating journalists as the lack of faculty expertise in data journalism. This is logical, given that it was only until fairly recently that journalists were mainly writers working in a specific form of black and white type set on newsprint. Most academic programs still have strong political divides between print and broadcast journalism. Only recently have they come to terms with the idea of teaching convergence journalism \cite{kolodzy_convergence_2006} and restructured curricula to focus on multimedia storytelling. With the mainstreaming of data and computational journalism in the past ten years, leading institutions now recommend adding data scraping and cleaning, data analysis and visualization, coding and other computational methods to the list of skills that journalism programs should be offering \cite{berret_teaching_2016}. However, research shows that journalism educators, with very good reason, are "stressed out" by these technological changes and the proliferating tools and techniques that accompany them \cite{voakes_impact_2003}.
+
+\section{Tool Overload}
+
+Neither journalism professionals nor educators can keep up with the rapid proliferation of tools, techniques, platforms and technology that can be used in support of data-driven storytelling. The co-authors of this paper have, in separate work, logged more than 500 free or "freemium" tools designed for journalists and communicators to collect, analyze, or visualize data. This creates tremendous complexity for journalism educators. Navigating the myriad of tools alone can be a challenge to faculty strapped for time without large professional development funds. Below are some examples of tools used in a data processing pipeline.  
+
+\begin{tabular}{ |p{2.3cm}|p{5.3cm}| } 
+ \hline
+ Process & Tools \\
+ \hline
+ \hline
+ Acquiring & Python scripts, browser extensions \\ \hline
+ Cleaning & OpenRefine, Trifacta Wrangler \\ \hline
+ Exploring and analyzing & Tableau, Excel, R \\ \hline
+ Presenting visualizations & DataWrapper, plot.ly, D3 \\
+ \hline
+\end{tabular}
+
+Should one introduce map-making to students with CARTO, GoogleMaps, ESRI StoryMap, Knight StoryMaps, ZeeMaps, OpenStreetMap, plot.ly, Tableau, D3 or R?  The options are intimidatingly large.
+
+While the explosion of tools can be seen as a boon to an emerging field, it also presents challenges to the data journalism educator. The landscape shifts continuously. Businesses that offer free tools that students and professionals come to rely on can easily shift into a paid business model, as DataWrapper did in 2014\footnote{\url{https://www.journalism.co.uk/news/datawrapper-to-launch-paid-for-options/s2/a562961/}}, or discontinue them altogether. Open source tools maintained by communities of dedicated volunteers can lose steam and have a hard time fixing bugs and creating good user experiences, as has happened with OpenRefine\footnote{\url{http://openrefine.org/}}. Technology that comes out of research or grant-funded projects may thrive for some time but ultimately be left unsupported and unmaintained, as happened with the before-its-time platform ManyEyes\footnote{\url{http://www.bewitched.com/manyeyes.html}}. Moreover, questions of data ownership and privacy get complicated when data (which may contain sensitive information about sources) is uploaded to and hosted on proprietary platforms. 
+
+\section{Pedagogical Approaches}
+
+By suggesting classroom strategies for navigating this complexity, we hope to begin to shift the norms of journalism education in a computational and data-driven world. Specifically, we argue that it is not feasible for data journalism educators to master all tools and techniques to transmit them to students, nor should they try. There is a wealth of project- and peer-based learning literature to draw upon that can support educators to make the shift from the "banking model" of education \cite{freire_pedagogy_2000} to a learner-centered model\cite{piaget_origins_1952, cullen_learner-centered_2012} in which students co-create knowledge with the professor, who acts as a "Guide on the Side"\cite{king_sage_1993}. Indeed, we assert that data journalism teachers themselves should actively seek to connect with experts outside the classroom, intentionally set up situations in which their students teach them new things, and model "not knowing but finding out" for their students.
+
+We have developed a number of methods to tackle the challenges around information overload, technical complexity and tool proliferation in data journalism.  This paper reviews four approaches we have taken by providing background pedagogy, describing what we do, and discussing student reaction and impact.  Our approaches are deeply rooted in Jean Piaget's foundational work around the processes of "assimilation" and "accommodation" in learners \cite{piaget_origins_1952}. His work describes how new information and experiences are either assimilated into a learner's existing theories, or how the new information causes the learner to change her theories to accommodate the new information.  This approach helps us value the student as a collaborative learner in educational settings, and respects the experiences and context they bring.  Building on this foundation we draw on a variety of pedagogical theories to inform each of our approaches.
+
+\subsection{Peer Learning}
+
+Working with data on a budget involves piecing together a patchwork quilt of tools.  The sheer number of tools to choose from has made it impossible to introduce even the most important of them all to students.  More critically, there isn't well-established criteria for helping students understand how and when to piece together this quilt.  To address this challenge we look to peer learning approaches.  We define peer learning as the process of students learning from and with each other, as opposed to from their professor or a third party domain expert.  Decades of existing study has held up peer learning as an effective strategy in a variety of educational settings\cite{sanders_peer_2001}.  Existing work also suggests it allows for engagement of a more diverse set of learners\cite{fuchs_peer-assisted_1997}.  Our courses have integrated peer learning to address tool introductions in two distinct ways.  
+
+We have students write reviews of tools for each other as a way to build and distribute expertise across the classroom.  We created a website at NetStories.org with reviews of online tools for working with data, where the reviews are crowdsourced as assignments to the participants in our classes each semester \footnote{\url{www.netstories.org}}.  In parallel, we maintain an informal list of any tool for working with data that may or may not have yet been reviewed.  In class, we have students pick the top 3 tools they are interested to learn, and then assign each student one tool to learn and write a review about. Often these are tools that we, as the professors, have never used. The audience for each review is other learners, including educators.  We have each student present the tool they reviewed for 5 minutes in class, allowing for broader awareness across the class. After these presentations, students are considered the class "expert" in that tool and over the course of the semester we will often refer other students to that expert when they need to use that tool in their final projects. 
+
+In another example, we have students teach tools to each other to establish criteria for assessing when and how to use them in appropriate ways.  Bhargava used this technique recently to introduce students to useful tools for mapping.  He assigned half the class a tutorial that introduced them to CARTO \footnote{\url{http://academy.CARTO.com/courses/beginners-course/}}, and assigned the other half a tutorial for mapping in Tableau Public  \footnote{\url{http://www.tableau.com/learn/tutorials/on-demand/basic-mapping}}.  Each group was assigned the task of analyzing the same dataset geographically using the tool specified.  In the next class the groups were paired across tools; each pair comprised of one person that learned CARTO and one that learned Tableau.  They were then given 15 minutes each to introduce the other to what they made, how they had done it, and why that tool might be useful.  The activity concluded with a short discussion comparing the two.
+
+These two examples of peer learning within formal undergraduate classroom settings demonstrate how to start tackling the challenge of introducing the enormous volume of online tools for working with data.  We find ourselves constantly referring back to tool reviews as students run into a problem best solved by a tool a different student reviewed.  This solidifies the idea that we are all learning this new area together, and reinforces the value of the reviews and learning a student did (even if they don't end up using the tool they reviewed).  The paired teaching activity consistently ranks highly in end-of-semester feedback from students, and the post-activity discussion always raises relevant conversations about tool affordances and appropriateness.
+
+However, assessing peer learning can sometimes be a challenge for formal curriculum.  Fortunately, previous work has laid out motivations and approaches for this\cite{boud_peer_1999}.  We focus on individual assessment for the reviews, since we have the artifact of the review itself to evaluate.  For the paired peer teaching, we use the discussion time afterwards as a group-level assessment for the learning that happened in pairs.
+
+\subsection{Learning by Doing}
+
+Engaging students in using computer-based tools for story-finding and storytelling requires a rich set of invitations to appeal to different learning styles.  Far too many students have described rote introductions to data tools, involving the professor tediously doing worksheet and spreadsheet manipulations of data they did not understand. Those basic activities do little to prepare students for a future of learning new tools to find and tell stories in new ways. The best way to learn how to learn these tools is by trying them out.
+
+Building on Piaget's previously described concepts of "accommodation" and "assimilation", we take inspiration from Seymour Papert's theory of Constructionism \cite{papert_childrens_1994}.  His approach revolves around the idea that optimal learning occurs when people are designing and making things that are meaningful to them or their peers; you learn by doing the task with your peers.  This pedagogy values the learner as a rich individual full of experiences, knowledge, and ideas that can be engaged to introduce them to new material.  We're inspired by Papert's classic anecdote about wanting to create "soap sculpture math"; a math that allows for the type of engagement children have when carving sculptures out of soap; lovingly attended to over time and celebrated for uniqueness and playfulness \cite{harel_situating_1991}.  We are looking for a model for what "soap sculpture data analysis" might be. In addition, Papert's intellectual descendants have created a variety of approaches that we can draw from; including design principles for building software for learners \cite{harel_software_1988,resnick_reflections_2005} and guidelines for creating activities to introduce those tools  \cite{resnick_designing_2013}.
+
+We have created a number of hands-on learning activities, and tools to support them, that integrate this playful pedagogy into our data storytelling curriculum. 
+\begin{itemize}
+  \item Students often approach text as qualitative data, unaware of the potential for quantitative analysis of text that computers provide.  We introduce quantitative text analysis by having students look for patterns in pop music lyrics, and then sketch what they find as visual stories on large pieces of paper.  We created the WordCounter tool to support this activity, by showing the frequency of words and phrases used \cite{bhargava_designing_2015}.
+  \item Quantitative text analysis is often more meaningful in comparison, and can involve algorithmic analysis. We introduce the idea of comparing two sets of documents to surface similarities and differences. Students use SameDiff to compare different artists' lyrics and then write an imaginary duet they would sing together. 
+  \item Getting started with a dataset is often intimidating. We introduce students to how to start looking for stories in a spreadsheet by brainstorming questions to ask the data in front of them, and looking for other datasets they might need to answer those questions.  Our WTFcsv tool supports this activity by providing a quick overview of a spreadsheet's columns.
+\end{itemize}
+
+These activities are collected online as a suite, available on our DataBasic.io website\footnote{DataBasic.io was created with support from the Knight Foundation}. Each of these activities offers a fun, hands-on approach to learning concrete skills related to finding and telling stories with data.  The tools are available in multiple languages, with culturally appropriate sample data, to invite an even larger audience into the field.
+
+Students consistently respond well to these hands-on activities in our classes.  One commented on appreciating the opportunity to "get our hands dirty in the process"; while another commented that integrating these activities into lectures "is incredibly useful".  The artifacts they produce give us a window into the learning that happens, letting us point to sketches, questions, and lyrics to demonstrate their growth in understanding of key concepts.  Each activity ends with a sharing time for small groups to describe what they have made, offering opportunities for discussion to open up larger and deeper issues the tiny activities only touch on.  We offer activity guides with share-back discussion suggestions and more for other educators who wish to run them in their classrooms. Our approach to developing these tools takes inspiration from a history of involving the target users as co-designers in the software itself, and an awareness that acceptance is driven by features, experiences, awareness, and purpose \cite{mackie_factors_1988}.
+
+\subsection{Modeling Learning and Information Seeking}
+
+Another challenging aspect of the disruption in journalism is that so much of the conversation in the field is moving at a pace far faster than ever before. Data journalism today is not a static field. It is endlessly dynamic, with innovations emerging from many sectors.  Both professors and students need to consider themselves learners in this arena. The professor can explicitly position herself as a learner to set an example for students (by frequently saying "I don't know, but let's find out together") and modeling information seeking and technical troubleshooting practices. Introducing students into an evolving landscape like this requires a new set of approaches to how they think of themselves joining the field. We find inspiration here in the emphasis on learning by doing in the "teaching hospital" model of journalism \footnote{While the teaching hospital model does take a hands-on approach to learning and uses journalism to begin a conversation with the surrounding community, we think Mensing and Ryfe \cite{mensing_blueprint_2013} raise important critiques about its limitations in introducing students to the complexity and uncertainty that currently surround journalistic business models and professional practices.} as well as Vygotsky's writing about how learners join fields based on apprenticeship\cite{vygotsky_mind_1980}.  Vygotsky documents how learners' interactions with more "capable" domain experts can benefit those that are primed to join a field, but need support to continue developing well.  This "zone of proximal development" theory offers a methodology that involves respecting both the independent skills of the learner, but also the process of being challenged and supported by more experienced co-learners or facilitators.  We attempt to implement this in a variety of ways in our courses.
+
+Our readings are sourced from a variety of online platforms, providing an understanding of where the innovation is happening.  More than half of the readings we assign were written in the last 3 years.  A full 50\% of the readings are blog posts or videos\footnote{\url{http://datastudio2016.datatherapy.org}}. As Berret and Philips' report found, there is little agreement among data journalism educators on textbooks\cite{berret_teaching_2016}. We would offer that that is because the field is moving too quickly and unevenly to capture in a single-authored text. Multiple (often contradictory, interdisciplinary) voices are important.  Classic academic papers and books certainly play a role, but are not where one finds the latest responses to the challenges being faced. Videos, podcasts, blog posts, and other multimedia artifacts also set the norm for how new ideas are communicated in the field by professionals.  This is built on the rich history of integrating multimedia content into educational settings\cite{boling_individual_1999, pipes_multimedia_1996}.
+
+Additionally, we require our students to join the conversation online in a variety of ways.  At the most basic level, students in both our classes are required to post assignments to the class public blog. This builds a practice of writing about ideas still under construction. D'Ignazio's "Getting in the Flow" assignment requires a number of additional steps:
+
+\begin{itemize}
+  \item Tweeting out ideas and inspirations under the \#emersondataviz hashtag on Twitter.
+  \item Joining a number of relevant mailing lists (Data-Driven Journalism, NICAR, Data is Plural, and more). 
+  \item Following at least 3 data journalism-related blogs.
+\end{itemize}
+
+The goal of this assignment, which occurs early in the semester, is to put the journalism students in the middle of the evolving conversation among experts. Students see immediately that professionals don't know everything. They rely on each other for methodological brainstorming and technical troubleshooting and draw on the knowledge of a global group of peers. This puts students in the right places to understand where the new norms are being created in an emerging field, again echoing Vygotsky's theory of the social construction of knowledge (as opposed to Piaget's heavy focus on the individual).
+
+This process of thinking out in the open can be difficult for students to take on.  Classrooms are intended to be safe spaces for learners to experiment with ideas, so mainly we focus on introducing students to these digital public spaces as listeners.
+
+\subsection{Establishing a Culture of Critique}
+
+Just as hearing multiple (interdisciplinary, possibly contradictory) voices in course readings should be seen as a desirable design goal, students should hear multiple authoritative voices in the classroom as well. In art and design schools, the "critique" functions as a reason for learners, professors and invited outside guests to come together around an artifact \cite{buster_critique_2007}. We assert that this model has utility for data journalism education in several ways. 
+
+First, the artifacts of data journalism are often (though not always) visual and possibly interactive. Rather like a user testing session, the critique offers a way of efficiently gathering multiple people's perspectives and reflections on the reception and understanding of the story, graphic, visualization or app. A good critique empowers peers to speak equally with professors and invited guests, so this folds back into peer learning and assessment. 
+
+Second, because producing data-driven stories is complex - doing it well may involve computational skills, quantitative skills, visual design skills and narrative skills - no single expert will look at the result in the same way. Data scientists will ask questions about the collection and analysis of data and offer suggestions for alternate comparisons, writers will offer better ways to contextualize numbers in the narrative, designers will give advice on ease of use and visual experience, etc. Inviting these experts into the classroom and making the critique a public process empowers students to see their work from these different points of view. For example, a designer attended final project reviews for D'Ignazio's class in Data Visualization and observed that all projects needed to make color choices more intentionally and to consider the consistency of their color palettes across a story when using multiple graphics. Several teams commented that they had never thought about consistency in color and tuned their final projects accordingly - the designer's feedback had helped them see their work in a new way.
+
+Finally, inviting expert guests to the class is also an opportunity for the professor to see and learn from these other perspectives as well as to establish relationships with others in the field. Small and continuous opportunities for professional development and connection with the world outside academia should be encouraged and incentivized by the institution\footnote{For example, departments might allot faculty a small guest honoraria budget each semester in order to invite guest reviewers to critiques.}, particularly for fields like data journalism that are both transdisciplinary and undergoing rapid transformation. This provides an informal check and balance that class approaches and student work are in line with emerging practices and introduce new ways of thinking to the professor. For example, the guest designer's advice about consistency across graphics in a story is something that D'Ignazio had not previously noticed\footnote{We only reluctantly admit this for the purposes of this paper, and hope that readers will not tell anyone else.}. After the guest's visit, she has now incorporated that perspective as basic visual design feedback for student work in data journalism.  Bhargava has had similar changes in his approaches to his professional work based on insightful comments from invited guests.
+
+The feedback in student evaluations is definitive on the value of outside voices. One student notes, "I really appreciated how you brought in colleagues to help critique and inform our work." And several students noted that opportunities to learn from people outside the classroom were one of the most rewarding parts of the class; saying "I liked the guest panel" and "the most valuable parts include engagement opportunities with professionals (field trips, visits, MIT presentations)".
+
+\section{Conclusion}
+
+In this paper, we have outlined how tool proliferation, transformation of reporting methods, and new emerging social practices are the new norm in the field of data journalism. We do not expect things to settle down anytime soon. To the contrary, we see journalists taking up emerging computational methods like machine learning \cite{bhatia_how_2015}, reverse-engineering of algorithms \cite{diakopoulos_algorithmic_2015} and sensor journalism \cite{pitt_sensors_2014} and expect that there will soon be tools that help other journalists and newsrooms take advantage of these methods in a more user-friendly way. The goal of data journalism education in this landscape should not be to teach tools, nor even to teach technical skills, but rather to model for students strategies for dealing with transformation and complexity. These include peer learning, learning by doing, joining the field as a learner and establishing a culture of critique. All of these methods seek to de-center the professor as "all-knowing expert" (still too often the norm in higher education) and move towards a future where professors model practices of information seeking, experimentation and assessment together with students and a community of transdisciplinary experts from outside the institution. This is essential for the creation of a model of journalism education that serves today's students. Ultimately, the value for students is to introduce them to a lifelong set of strategies to deal with a field that is in a permanent state of technological and informational transformation.
+
+\bibliographystyle{abbrv}
+\bibliography{teaching_data_journalism}
+
+%\balancecolumns 
+
+\end{document}
